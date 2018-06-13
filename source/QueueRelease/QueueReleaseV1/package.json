@@ -1,0 +1,26 @@
+{
+  "name": "queuebuild",
+  "version": "1.0.0",
+  "description": "This queues a build or release in vsts",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "@types/mocha": "^5.2.1",
+    "@types/request": "^2.47.0",
+    "@types/request-promise": "^4.1.41",
+    "@types/request-promise-native": "^1.0.14",
+    "chai": "^4.1.2",
+    "dockerode": "^2.5.5",
+    "mocha": "^5.2.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "request-promise-native": "^1.0.5",
+    "vso-node-api": "^6.5.0",
+    "vsts-task-lib": "^2.4.0"
+  }
+}

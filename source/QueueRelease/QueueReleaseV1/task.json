@@ -1,0 +1,78 @@
+{
+	"id": "fcba1311-cc78-4d9f-9479-772a2987cf20",
+	"friendlyName": "Trigger Build/Release",
+	"description": "This will trigger a build or release",
+	"author": "Kevin Popken",
+	"demands": [],
+	"name": "TriggerBuild",
+	"minimumAgentVersion": "2.105.0",
+	"instanceNameFormat": "TriggerBuild",
+	"version": {
+    "Major": "1",
+    "Minor": "0",
+    "Patch": "0"
+  },
+   "runsOn": [
+        "Agent",
+        "DeploymentGroup"
+    ],
+    "releaseNotes": "Initial",
+	"category": "Utility",
+	"visibility": [
+		"Build",
+		"Release"
+    ],
+    "groups": [{
+            "name": "auth",
+            "displayName": "Authentication & Authorization",
+            "isExpanded": true
+        }
+    ],
+	"inputs": [ {
+        "name": "runAsync",
+        "type": "boolean",
+        "defaultValue": "false",
+        "label": "Run Async",
+        "required": true,
+        "helpMarkDown": "Queue Release and not wait"
+    },
+    {
+        "name": "releaseDefinitionId",
+        "type": "string",
+        "label": "Release Definition ID",
+        "required": true,
+        "helpMarkDown": "ID of a release definition"
+        },
+        {
+            "name": "requestedFor",
+            "type": "boolean",
+            "label": "Use Requester User",
+            "defaultValue": true,
+            "required": true,
+            "helpMarkDown": "Activate this checkbox to use the same requester user for the queue builds that was used for the current build/release.",
+            "groupName": "auth"
+        },
+        {
+            "name": "authToken",
+            "type": "string",
+            "label": "Auth Token",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Use a specific authentication token.",
+            "groupName": "auth"
+        },
+        {
+            "name": "releaseIdOutputVariable",
+            "type": "string",
+            "label": "Release Id Output Variable",
+            "defaultValue": "ReleaseId",
+            "required": true,
+            "helpMarkDown": "Variable name used to write the resulting release id.",
+        }
+	],
+	"execution": {
+		"Node": {
+			"target": "src/index.js"
+		}
+  }
+}

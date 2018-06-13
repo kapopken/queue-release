@@ -1,0 +1,29 @@
+{
+	"manifestVersion": 1,
+	"id": "releasetasks",
+	"version": "1.0.0",
+	"name": "ReleaseTasks",
+	"publisher": "kevinpopken",
+	"categories": [
+		"Build and release"
+	],
+	"targets": [{
+			"id": "Microsoft.VisualStudio.Services.Cloud"
+		}
+	],
+	"files": [			
+		{
+			"path": "QueueRelease"
+		}
+	],
+	"contributions": [
+		{
+			"id":"queueRelease",
+			"type": "ms.vss-distributed-task",
+			"targets":["ms.vss-distributed-task.tasks"],
+			"properties":{
+				"name": "QueueRelease"
+			}
+		}
+	]
+}
