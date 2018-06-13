@@ -16,7 +16,8 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
-
+*.js
+*.vsix
 # nyc test coverage
 .nyc_output
 
